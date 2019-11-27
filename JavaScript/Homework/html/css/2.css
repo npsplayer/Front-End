@@ -1,0 +1,59 @@
+#todos {
+  list-style: none;
+}
+.element {
+  display: grid;
+  grid-template-columns: 150px 50px;
+  width: 150px;
+  height: auto;
+  font-size: 15px;
+  padding: 7px 25px 5px 5px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  border-left: 10px solid #f05d22;
+  box-shadow: 2px -2px 5px 0 rgba(0, 0, 0, 0.1),
+    -2px -2px 5px 0 rgba(0, 0, 0, 0.1), 2px 2px 5px 0 rgba(0, 0, 0, 0.1),
+    -2px 2px 5px 0 rgba(0, 0, 0, 0.1);
+}
+input {
+  outline: none;
+  border: 1.5px solid #fcba30;
+  border-radius: 5px;
+  font-size: 15px;
+  width: 140px;
+  height: 15px;
+  padding: 10px;
+  box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.1);
+}
+#datetime {
+    width: 200px;
+}
+body {
+  font-family: "Trebuchet MS", "Lucida Sans";
+  font-size: 20px;
+  letter-spacing: 1px;
+}
+button {
+  outline: none;
+  border-left: 10px solid #8bc63e;
+  border-top: 1.5px solid #8bc63e;
+  border-bottom: 1.5px solid #8bc63e;
+  border-right: 1.5px solid #8bc63e;
+  border-radius: 5px;
+  background: white;
+  font-size: 20px;
+}
+div.item-element {
+ word-wrap: break-word;
+}
+.checked {
+  color: gray;
+  text-decoration: line-through;
+}
+span {
+  color: red;
+  display: block;
+  position: relative;
+  margin-left: 4px;
+  align-self: center;
+}
