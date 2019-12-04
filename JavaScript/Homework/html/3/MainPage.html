@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="css/3.css" />
+    <title>Document</title>
+  </head>
+  <body>
+      <div id="info">
+        <h1>Новое растение:</h1>
+        <form id="formCreate" autocomplete="off">
+            <div id="grid"> 
+                    <Span>Выберите растение:</Span>
+                    <select id="type">
+                        <option value="1">Папоротник</option>
+                        <option value="2">Ель обыкновенная</option>
+                    </select>
+                <span>Вид:</span><input type="text" id="viewInput" placeholder="Вид"></<span>
+                <span>Возраст:</span><input type="text" id="ageInput" placeholder="Возраст"></<span>
+                <span>Семейство:</span><input type="text" id="familyInput" placeholder="Семейство">
+                <span>Род:</span><input type="text" id="genderInput" placeholder="Род">
+                <span>Место произрастания:</span><input type="text" id="placeofGrowthinput" placeholder="Место">
+                <span>Описание:</span><input type="text" id="descriptionInput" placeholder="Описание">
+                <span>Класс:</span><input type="text" id="gradeInput" placeholder="Класс">
+                <span>Область применения:</span><input type="text" id="applicationAreaInput" placeholder="Применение">
+                <input id = "back" type="button" value="На главную">
+                <input id = "add" type="button" value="Создать">
+                <input id="save" type="button" value="Сохранить">
+                <input id="clear" type="button" value="Очистить">
+            </div>
+        </form>
+    </div>
+    <div id="view">
+        <input id="create" type="button" value="Создать">
+        <table class="list" id="emloyeelist">
+        </table>
+    </div>
+        <script src="script/3.js"></script>
+  </body>
+</html>
