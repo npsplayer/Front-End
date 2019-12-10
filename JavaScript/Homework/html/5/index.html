@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>ES6</title>
+  <link rel="stylesheet" href="./css/style.css">
+</head>
+
+<body onload=" alert('Для правильной записи в историю, очищайте дисплей(С) после каждой операции!')">
+
+
+  <div class="calculator">
+    <div class="inputcalc">
+      <span id="history"></span>
+      <input type="text" class="calc_all" value="" disabled />
+      <select id="typetrig">
+        <option value="GRAD">GRAD</option>
+        <option value="RAD">RAD</option>
+      </select>
+    </div>
+    
+    <div class="calc_keys">
+      
+
+      <button type="button" class="digit" value="7">7</button>
+      <button type="button" class="digit" value="8">8</button>
+      <button type="button" class="digit" value="9">9</button>
+      <button type="button" class="operator" value="+">+</button>
+      <button type="button" class="trigoperator" value="sin">sin</button>
+      <button type="button" class="operator" value="%">%</button>
+
+      <button type="button" class="digit" value="4">4</button>
+      <button type="button" class="digit" value="5">5</button>
+      <button type="button" class="digit" value="6">6</button>
+      <button type="button" class="operator" value="-">-</button>
+      <button type="button" class="trigoperator" value="cos">cos</button>
+      <button type="button" class="trigoperator" value="n!">n!</button>
+
+      <button type="button" class="digit" value="1">1</button>
+      <button type="button" class="digit" value="2">2</button>
+      <button type="button" class="digit" value="3">3</button>
+      <button type="button" class="operator" value="*">*</button>
+      <button type="button" class="trigoperator" value="tg">tg</button>
+      <button type="button" class="operator" value="a^b">x<sup>y</sup></button>
+      
+      <button type="button" class="digit" value="0">0</button>
+      <button type="button" class="digit" value=".">.</button>
+      <button type="button" class="equal-sign operator" value="=">=</button>
+      <button type="button" class="operator" value="/">/</button>
+      <button type="button" class="trigoperator" value="ctg">ctg</button>
+      <button type="button" class="clear" value="0">C</button>
+
+    </div>
+    
+  </div>
+
+  <script src="./icon.js"></script>
+  <script src="./script.js"></script>
+</body>
+
+</html>

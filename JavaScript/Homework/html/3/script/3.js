@@ -16,75 +16,74 @@ var list = document.querySelector("#emloyeelist");
 var create = document.querySelector("#create");
 var save = document.querySelector("#save");
 var clear = document.querySelector("#clear");
+var json = document.getElementById("tojson");
 
-var arrPlants = [];
-
-var Fern1 = new Fern();
-Fern1.view = "Орляк обыкновенный";
-Fern1.age = 2;
-Fern1.family = "Деннштедтиевые";
-Fern1.gender = "Орляк";
-Fern1.description = "5";
-Fern1.grade = "Папоротниковые";
-arrPlants.push(Fern1);
-var Spruce1 = new Spruce();
-Spruce1.view = "Ель обыкновенная";
-Spruce1.age = 3;
-Spruce1.family = "Сосновые";
-Spruce1.gender = "Ель";
-Spruce1.description = "5";
-Spruce1.grade = "Хвойные";
-arrPlants.push(Spruce1);
-
+// const AGE_REGEX = "\d+{2}";
+// console.log(ageInput.value.match(AGE_REGEX));
 
 function Info() {
   list.innerHTML = "";
   list.innerHTML +=
     "<thead class='listheader'>" +
-        "<th>Вид</th>" +
-        "<th>Возраст</th>" +
-        "<th>Семейство</th>" +
-        "<th>Род</th>" +
-        "<th>Описание</th>" +
-        "<th>Класс</th>" +
-        "<th></th>" +
+    "<th>Вид</th>" +
+    "<th>Возраст</th>" +
+    "<th>Семейство</th>" +
+    "<th>Род</th>" +
+    "<th>Описание</th>" +
+    "<th>Класс</th>" +
+    "<th></th>" +
     "</thead>";
   for (var i = 0; i < arrPlants.length; i++) {
-  
     list.innerHTML +=
       "<thead>" +
-        "<th id=details" + i + ">" + arrPlants[i].getView() + "</th>" +
-        "<th>" + arrPlants[i].getAge() + "</th>" +
-        "<th>" + arrPlants[i].getFamily() + "</th>" +
-        "<th>" + arrPlants[i].getFamily() + "</th>" +
-        "<th>" + arrPlants[i].getDiscription() + "</th>" +
-        "<th>" + arrPlants[i].getGrade() + "</th>" +
-        "<th>" +
-            "<div id=edit" + i + ">Редактировать </div>" +
-            "<div id=delete" + i + "> Удалить</div>" +
-        "</th>" +
+      "<th id=details" +
+      i +
+      ">" +
+      arrPlants[i].getView() +
+      "</th>" +
+      "<th>" +
+      arrPlants[i].getAge() +
+      "</th>" +
+      "<th>" +
+      arrPlants[i].getFamily() +
+      "</th>" +
+      "<th>" +
+      arrPlants[i].getFamily() +
+      "</th>" +
+      "<th>" +
+      arrPlants[i].getDiscription() +
+      "</th>" +
+      "<th>" +
+      arrPlants[i].getGrade() +
+      "</th>" +
+      "<th>" +
+      "<div id=edit" +
+      i +
+      ">Редактировать </div>" +
+      "<div id=delete" +
+      i +
+      "> Удалить</div>" +
+      "</th>" +
       "</thead>";
   }
-    for (var i = 0; i < arrPlants.length; i++) {
-    var detal = "details" + i;
-    var edit = "edit" + i;
-    var del = "delete" + i;
+  for (let i = 0; i < arrPlants.length; i++) {
+    let detal = "details" + i;
+    let edit = "edit" + i;
+    let del = "delete" + i;
     document.getElementById(detal).style.color = "orange";
     document.getElementById(edit).style.color = "blue";
     document.getElementById(del).style.color = "red";
-    document.getElementById(detal).addEventListener("click", function(){  
-      delailsPlants(i-1);
+    document.getElementById(detal).addEventListener("click", function() {
+      delailsPlants(i);
     });
-    document.getElementById(edit).addEventListener("click", function(){  
-      editPlants(i-1);
+    document.getElementById(edit).addEventListener("click", function() {
+      editPlants(i);
     });
-    document.getElementById(del).addEventListener("click", function(){  
-       deletePlants(i-1);
+    document.getElementById(del).addEventListener("click", function() {
+      console.log(i);
+      deletePlants(i);
     });
-    
-    }
-    
-  
+  }
 }
 function CreatePlants() {
   var view = viewInput.value;
@@ -107,6 +106,9 @@ function CreatePlants() {
       FernNew.grade = grade;
       FernNew.applicationArea = apparea;
       arrPlants.push(FernNew);
+      var REGEX = /^([1-9]{1,2})$/;
+
+      console.log(age.match(REGEX));
       console.log(arrPlants);
       break;
     case "2":
@@ -123,7 +125,6 @@ function CreatePlants() {
       console.log(arrPlants);
       break;
   }
-
 }
 function delailsPlants(id) {
   view.style.display = "none";
@@ -148,10 +149,9 @@ function editPlants(id) {
   save.style.display = "block";
   add.style.display = "none";
   clear.style.display = "none";
-  if(arrPlants[id] == [Fern]) {
+  if (arrPlants[id] == [Fern]) {
     typeSelect.value = "1";
-  }
-  else {
+  } else {
     typeSelect.value = "2";
   }
   viewInput.value = arrPlants[id].view;
@@ -163,46 +163,43 @@ function editPlants(id) {
   gradeInput.value = arrPlants[id].gender;
   applicationAreaInput.value = arrPlants[id].applicationArea;
   save.addEventListener("click", function() {
-
-  switch (typeSelect.value) {
-    case "1":
-      var FernNew = new Fern();
-      FernNew.view = viewInput.value;
-      FernNew.age = ageInput.value;
-      FernNew.family = familyInput.value;
-      FernNew.gender = genderInput.value;
-      FernNew.placeOfGrowth = placeOfGrowthInput.value;
-      FernNew.description = descriptionInput.value;
-      FernNew.grade = gradeInput.value;
-      FernNew.applicationArea = applicationAreaInput.value;
-      arrPlants.splice(id, 1, FernNew);
-      alert("EDIT");
-      Info();
-      view.style.display = "block";
-      info.style.display = "none";
-      break;
-    case "2":
-      var SpruceNew = new Spruce();
-      SpruceNew.view = viewInput.value;
-      SpruceNew.age = ageInput.value;
-      SpruceNew.family = familyInput.value;
-      SpruceNew.gender = genderInput.value;
-      SpruceNew.placeOfGrowth = placeOfGrowthInput.value;
-      SpruceNew.description = descriptionInput.value;
-      SpruceNew.grade = gradeInput.value;
-      SpruceNew.applicationArea = applicationAreaInput.value;
-      arrPlants.splice(id, 1, SpruceNew);
-      Info();
-      view.style.display = "block";
-      info.style.display = "none";
-      break;
-      
-  }
-});
+    switch (typeSelect.value) {
+      case "1":
+        var FernNew = new Fern();
+        FernNew.view = viewInput.value;
+        FernNew.age = ageInput.value;
+        FernNew.family = familyInput.value;
+        FernNew.gender = genderInput.value;
+        FernNew.placeOfGrowth = placeOfGrowthInput.value;
+        FernNew.description = descriptionInput.value;
+        FernNew.grade = gradeInput.value;
+        FernNew.applicationArea = applicationAreaInput.value;
+        arrPlants.splice(id, 1, FernNew);
+        Info();
+        view.style.display = "block";
+        info.style.display = "none";
+        break;
+      case "2":
+        var SpruceNew = new Spruce();
+        SpruceNew.view = viewInput.value;
+        SpruceNew.age = ageInput.value;
+        SpruceNew.family = familyInput.value;
+        SpruceNew.gender = genderInput.value;
+        SpruceNew.placeOfGrowth = placeOfGrowthInput.value;
+        SpruceNew.description = descriptionInput.value;
+        SpruceNew.grade = gradeInput.value;
+        SpruceNew.applicationArea = applicationAreaInput.value;
+        arrPlants.splice(id, 1, SpruceNew);
+        Info();
+        view.style.display = "block";
+        info.style.display = "none";
+        break;
+    }
+  });
 }
 
 function deletePlants(id) {
-  arrPlants.splice(id,1);
+  arrPlants.splice(id, 1);
   Info();
 }
 back.addEventListener("click", function() {
@@ -236,7 +233,10 @@ add.addEventListener("click", function() {
   info.style.display = "none";
 });
 
-
+tojson.addEventListener("click", function() {
+  let json = JSON.stringify(arrPlants);
+  console.log(json);
+});
 
 function Plants(view, age, family, gender, placeOfGrowth, description) {
   var _view;
@@ -255,9 +255,9 @@ function Plants(view, age, family, gender, placeOfGrowth, description) {
   this.getView = function() {
     return this.view;
   };
-  this.setView =function() {
+  this.setView = function() {
     _view = view;
-  }
+  };
   this.getAge = function() {
     return this.age + " " + Age;
   };
@@ -288,7 +288,6 @@ function Plants(view, age, family, gender, placeOfGrowth, description) {
   this.setDescription = function() {
     _description = description;
   };
-  
 }
 
 function Fern(grade, applicationArea) {
@@ -305,7 +304,7 @@ function Fern(grade, applicationArea) {
   };
   this.getapplicationArea = function() {
     return this.applicationArea;
-  }
+  };
   this.setApplicationArea = function() {
     _applicationArea = applicationArea;
   };
@@ -325,9 +324,29 @@ function Spruce(grade, applicationArea) {
   };
   this.getapplicationArea = function() {
     return this.applicationArea;
-  }
+  };
   this.setApplicationArea = function() {
     _applicationArea = applicationArea;
   };
 }
+
+var arrPlants = [];
+
+var Fern1 = new Fern();
+Fern1.view = "Орляк обыкновенный";
+Fern1.age = 2;
+Fern1.family = "Деннштедтиевые";
+Fern1.gender = "Орляк";
+Fern1.description = "5";
+Fern1.grade = "Папоротниковые";
+arrPlants.push(Fern1);
+var Spruce1 = new Spruce();
+Spruce1.view = "Ель обыкновенная";
+Spruce1.age = 3;
+Spruce1.family = "Сосновые";
+Spruce1.gender = "Ель";
+Spruce1.description = "5";
+Spruce1.grade = "Хвойные";
+arrPlants.push(Spruce1);
+
 Info();
