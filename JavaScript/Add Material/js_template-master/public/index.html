@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="./css/style.css">
+  <link rel="stylesheet" href="./css/icon.css">
+  <title>Document</title>
+</head>
+<body>
+  <input type="button" class="btn" value="Новый рейс" id="NewRoute"/>
+  <div id="pageRoute">
+    <div id="createroute">
+      <h1 id="titlename">Добавление рейса:</h1>
+      <form action="formCreateRoute" class="formRoute">
+        <p>Способ перевозки:</p>
+        <select id="selectTrans" class="inpt">
+          <option selected disabled value="Автобус">Выберите</option>
+          <option value="Автобус">Автобус</option>
+          <option value="Поезд">Поезд</option>
+          <option value="Такси">Такси</option>
+          <option value="Лошадь">Лошадь</option>
+        </select>
+        
+        <p>Дата:</p><input type="date" id="DateRoute" class="inpt"/>
+        <p>Пункт отправления:</p><input type="text" id="fromRoute" class="inpt"/>
+        <p>Пункт назначнеия:</p>
+        <select id="selectToRoute" class="inpt">
+          <option selected disabled value="Москва">Выберите</option>
+          <option value="Москва">Москва</option>
+          <option value="Санкт-Петербург">Санкт-Петербург</option>
+          <option value="Минск">Минск</option>
+          <option value="Брест">Брест</option>
+        </select>
+        
+        <p>Время отправления:</p><input type="time" id="timeFromRoute" class="inpt"/>
+        <p>Время прибытия:</p><input type="time" id="timeToRoute" class="inpt"/>
+        <p>Цена:</p><input type="text" id="priceRoute" class="inpt"/>
+      </form>
+      <div class="btnRoute">
+          <input type="button" class="btn formbtn" id="create" value="Добавить"/>
+          <input type="button" class="btn formbtn" id="save" value="Сохранить"/>
+          <input type="button" class="btn formbtn" id="clear" value="Очистить"/>
+          <input type="button" class="btn formbtn" id="back" value="Назад"/>
+        </div>
+    </div>
+    <div id="infoToRoute">
+      <div class="city" id="Москва">
+        <p><h1>Москва</h1></p>
+        <div>Москва – столица России, многонациональный город на Москве-реке в западной части страны. В его историческом центре находится средневековая крепость Кремль – резиденция российского президента. На ее территории можно посетить Оружейную палату, где выставляются драгоценные предметы, принадлежавшие царской семье. За северо-восточной стеной Кремля раскинулась Красная площадь – символический центр России. Здесь можно увидеть Мавзолей В. И. Ленина, Государственный исторический музей и собор Василия Блаженного с красочными луковичными куполами.</div>
+        <img src="./image/Moscow1.webp">
+        <img src="./image/Moscow2.jpg">
+      </div>
+      <div class="city" id="Санкт-Петербург">
+        <p><h1>Санкт-Петербург</h1></p>
+        <div>Санкт-Петербург – русский портовый город на побережье Балтийского моря, который в течение двух веков служил столицей Российской империи. Он был основан в 1703 году Петром I, которому воздвигнут знаменитый памятник "Медный всадник". Город по праву считается культурным центром страны. У туристов пользуются популярностью Мариинский театр, где проходят оперные и балетные спектакли, и Государственный Русский музей с коллекцией русского искусства, которая включает как православные иконы, так и работы художника-абстракциониста Василия Кандинского.</div>
+        <img src="./image/Peter1.jpg">
+        <img src="./image/Peter2.jpg">
+      </div>
+      <div class="city" id="Минск">
+        <p><h1>Минск</h1></p>
+        <div>Минск – современный город, который славится монументальной сталинской архитектурой. На широком проспекте Независимости длиной 15 километров расположены музеи, театры и другие достопримечательности. Проспект ведет на огромную площадь Независимости, которую окружают здание Комитета государственной безопасности и костел Святого Симеона и Святой Елены в неороманском стиле, также известный как Красный костел.</div>
+        <img src="./image/Minsk1.jpg">
+        <img src="./image/Minsk2.jpg">
+      </div>
+      <div class="city" id="Брест">
+        <p><h1>Брест</h1></p>
+        <div>Брест — город на юго-западе Белоруссии, административный центр Брестской области и Брестского района. Территория города — 146,12 км². На 1 января 2019 года население города составило 350 616 человек. Расположен в юго-западной части области, при впадении реки Мухавец в Западный Буг, у государственной границы с Польшей. </div>
+        <img src="./image/Brest1.jpg">
+        <img src="./image/Brest2.jpg">
+      </div>
+      <input type="button" class="btn formbtn" id="backInfo" value="Назад"/> 
+    </div>
+    <div id="allRoute">
+      <table id="listRoute" ></table>
+    </div>
+  </div> 
+  <script src="./icon.js"></script>
+</body>
+</html>
