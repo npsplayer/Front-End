@@ -1,0 +1,16 @@
+.generator {
+    width: 50px;
+    border-color: whitesmoke;
+}
+input {
+    margin: 5px 5px 5px 5px;
+    border-radius: 5px;
+    border-color: lawngreen;
+    border: 1.5px solid lawngreen;
+    background-color: white;
+    outline: none;
+}
+
+input:hover {
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.28);
+}

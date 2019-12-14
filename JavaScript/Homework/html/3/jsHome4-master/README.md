@@ -1,1 +1,0 @@
-https://lordkorvin.github.io/jsHome4/.
