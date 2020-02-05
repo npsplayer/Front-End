@@ -1,0 +1,142 @@
+.wrapper {
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
+}
+.title {
+  text-align: center;
+}
+.title p {
+  font-size: 30px;
+  font-weight: 70px;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: #0095ba;
+}
+.navigation {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+.search,
+.view,
+.add-new {
+  display: flex;
+  justify-content: space-between;
+  width: 400px;
+  margin-bottom: 10px;
+}
+input[type="search"] {
+  width: 400px;
+  height: 35px;
+  font-size: 17px;
+  font-family: Calibri;
+  font-weight: 400;
+  border: 1px solid #0095ba;
+  border-radius: 7px;
+  outline: none;
+  padding-left: 10px;
+}
+input[type="text"] {
+  width: 288px;
+  height: 31px;
+  font-size: 17px;
+  font-family: Calibri;
+  font-weight: 400;
+  border: 1px solid #0095ba;
+  border-radius: 7px;
+  outline: none;
+  padding-left: 10px;
+}
+.search-btn,
+.add {
+  width: 85px;
+  height: 35px;
+  border-radius: 7px;
+  border: 1px solid #0095ba;
+  background-color: #ffffff;
+  color: #0095ba;
+  outline: none;
+}
+
+.btn {
+  width: 85px;
+  height: 35px;
+  border-radius: 7px;
+  border: 1px solid #0095ba;
+  background-color: #ffffff;
+  color: #0095ba;
+  outline: none;
+}
+.btn:active,
+.search-btn:active,
+.add:active {
+  transform: scale(0.95);
+}
+.btn:hover {
+  background-color: #0095ba;
+  color: #ffffff;
+}
+.todos {
+  max-width: 390px;
+  width: 100%;
+  border: 1px solid #0095ba;
+  border-radius: 7px;
+  margin: 0 auto;
+  padding: 0;
+  padding: 5px;
+}
+.todos li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #79878d;
+  padding-bottom: 4px;
+  margin-bottom: 5px;
+  margin-top: 5px;
+}
+.todo {
+  font-size: 17px;
+  font-family: Calibri;
+  font-weight: 400;
+}
+.todo.highlight {
+  font-weight: 700;
+  color: #0095ba;
+}
+.delete-btn,
+.highlight-btn {
+  height: 30px;
+  width: 70px;
+  border: 1px solid #f70750;
+  border-radius: 7px;
+  margin-right: 5px;
+  outline: none;
+  background-color: #ffffff;
+  color: #f70750;
+}
+.highlight-btn {
+  border: 1px solid #28a745;
+  background-color: #ffffff;
+  color: #28a745;
+}
+.delete-btn:active,
+.highlight-btn:active {
+  transform: scale(0.95);
+}
+.delete-btn:hover {
+  background-color: #f70750;
+  color: #ffffff;
+}
+.highlight-btn:hover {
+  background-color: #28a745;
+  color: #ffffff;
+}
+li.hidden {
+  display: none;
+}
+.done {
+  text-decoration: line-through;
+}
