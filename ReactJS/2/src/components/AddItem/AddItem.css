@@ -1,0 +1,37 @@
+form {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.addInput {
+  width: 298px;
+  height: 38px;
+  border: 1px solid #0095ba;
+  border-radius: 7px;
+  padding: 0;
+  padding-left: 10px;
+  margin: 0;
+  font-family: Calibri;
+  font-size: 17px;
+  font-weight: 400;
+  outline: none;
+}
+.addItem {
+  width: 120px;
+  height: 40px;
+  border: 1px solid #0095ba;
+  background-color: #ffffff;
+  color: #0095ba;
+  font-family: Calibri;
+  font-size: 17px;
+  font-weight: 400;
+  outline: none;
+  border-radius: 7px;
+}
+.addItem:active {
+  transform: scale(0.95);
+}
+.addItem:hover {
+    background-color: #0095ba;
+    color: #ffffff;
+}

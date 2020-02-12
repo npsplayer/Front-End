@@ -1,0 +1,13 @@
+.container-search .search-input {
+  width: 298px;
+  height: 38px;
+  border: 1px solid #0095ba;
+  border-radius: 7px;
+  padding: 0;
+  padding-left: 10px;
+  margin: 0;
+  font-family: Calibri;
+  font-size: 17px;
+  font-weight: 400;
+  outline: none;
+}

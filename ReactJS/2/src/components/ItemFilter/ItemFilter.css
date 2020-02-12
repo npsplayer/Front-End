@@ -1,0 +1,32 @@
+.container-tab-btn .tab-btn {
+    width: 60px;
+    height: 40px;
+    border: 1px solid #0095ba;
+    background-color: #ffffff;
+    color: #0095ba;
+    font-family: Calibri;
+    font-size: 17px;
+    font-weight: 400;
+    outline: none;
+  }
+  .container-tab-btn .tab-btn:hover {
+    background-color: #696969;
+    color: #ffffff;
+  }
+  
+  .container-tab-btn .tab-btn:active,
+  .container-tab-btn .tab-btn:focus{
+    background-color: #0095ba;
+    color: #ffffff;
+  }
+  
+  .container-tab-btn .tab-btn:first-child {
+    border-top-left-radius: 7px;
+    border-bottom-left-radius: 7px;
+    border-right: none;
+  }
+  .container-tab-btn .tab-btn:last-child {
+    border-top-right-radius: 7px;
+    border-bottom-right-radius: 7px;
+    border-left: none;
+  }

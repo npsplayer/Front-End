@@ -1,0 +1,21 @@
+.todo-list-header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin: 20px 0;
+}
+.todo-list-header .title {
+  text-align: center;
+  text-transform: uppercase;
+  font-family: Calibri;
+  font-size: 35px;
+  font-weight: 700;
+  color: #0095ba;
+}
+.todo-list-header .info {
+  text-align: center;
+  font-family: Calibri;
+  font-size: 25px;
+  color: #0095ba;
+}
